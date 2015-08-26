@@ -1,0 +1,33 @@
+{
+  "name": "front-starter",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "live-server ./build"
+  },
+  "author": "kkosuge",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^9.0.7",
+    "coffee-reactify": "^4.0.0",
+    "coffee-script": "^1.9.3",
+    "coffeeify": "^1.1.0",
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-cjsx": "^3.0.0",
+    "gulp-coffee": "^2.3.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.0.6",
+    "gulp-watchify": "^0.5.0",
+    "live-server": "^0.8.1",
+    "reactify": "^1.1.1",
+    "stylus": "^0.52.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.3.1"
+  },
+  "dependencies": {
+    "react": "^0.13.3"
+  }
+}
