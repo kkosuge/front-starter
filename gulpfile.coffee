@@ -8,12 +8,20 @@ browserify = require 'gulp-browserify'
 source     = require 'vinyl-source-stream'
 watchify   = require 'gulp-watchify'
 rename     = require 'gulp-rename'
+babel      = require 'gulp-babel'
 
 paths =
   coffee: 'src/**/*.coffee',
   cjsx: 'src/**/*.cjsx',
   jade: 'src/**/*.jade',
   stylus: 'src/**/*.styl'
+  es6: './src/**/*.js'
+
+gulp.task 'build:es6', ->
+  gulp.src paths.es6
+    .pipe plumber()
+    .pipe babel()
+    .pipe gulp.dest('build')
 
 gulp.task 'watchify:coffee', watchify (watchify) ->
   gulp.src paths.coffee
@@ -54,6 +62,7 @@ gulp.task 'build', [
   'watchify:cjsx',
   'build:stylus',
   'build:jade'
+  'build:es6'
 ]
 
 gulp.task 'watch', ->
@@ -61,5 +70,6 @@ gulp.task 'watch', ->
   gulp.watch paths.cjsx, ['watchify:cjsx']
   gulp.watch paths.stylus, ['build:stylus']
   gulp.watch paths.jade, ['build:jade']
+  gulp.watch paths.es6, ['build:es6']
 
 gulp.task 'default', ['build', 'watch']
